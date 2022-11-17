@@ -36,9 +36,11 @@ function App() {
             </div>
           </div>
 
+
           <div className="child-char">
             <Character index={1} />
             </div>
+
         </div>
       </div>
     </>

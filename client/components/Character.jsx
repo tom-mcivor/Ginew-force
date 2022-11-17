@@ -11,11 +11,13 @@ export default function Character(props) {
   const character = characters.find((found) => found.id == characterId)
   const dispatch = useDispatch()
 
+
   function handleChange(event) {
     const index = props.index
     const id = event.target.value
     dispatch(selectChar(id, index))
   }
+
 
   // let [characterOne, setCharacterOne] = useState(characters[1])
 
