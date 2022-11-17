@@ -1,4 +1,25 @@
-// TODO: import actions
+// // TODO: import actions
+// import { SET_CHAR } from '../actions'
+
+// function characters(state = {}, action) {
+//   const { type, payload } = action
+
+//   if (type === SET_CHAR) {
+//     return payload
+//   }
+//   else {
+//     return state
+//   }
+
+//   // switch (type) {
+//   //   case RECEIVE_POSTS:
+//   //     return payload
+//   //   default:
+//   //     return state
+//   // }
+// }
+
+// export default characters
 
 const initialState = [
   {
@@ -11,7 +32,7 @@ const initialState = [
     universe: '0',
     transform: null,
     originplanet: 'Desconocido',
-    strength: 87
+    strength: 87,
   },
   {
     id: 125,
@@ -23,7 +44,7 @@ const initialState = [
     universe: '0',
     transform: null,
     originplanet: 'Desconocido',
-    strength: 13
+    strength: 13,
   },
   {
     id: 4,
@@ -35,7 +56,7 @@ const initialState = [
     universe: '1',
     transform: null,
     originplanet: 'Desconocido',
-    strength: 5
+    strength: 5,
   },
 ]
 /*
@@ -51,6 +72,8 @@ const reducer = (state = initialState, action) => {
   const { type, payload } = action
   switch (type) {
     // actions here
+    case 'SET_CHAR':
+      return payload
     default:
       return state
   }
