@@ -10,6 +10,11 @@ export default function Character() {
   // dispatch action to update selected character in redux
 
   return (
-    <div>Character</div>
+    <>
+      <div>Character</div>
+      {characters.map((char) => {
+        <img src={state.image} alt="test" />
+      })}
+    </>
   )
 }

@@ -1,4 +1,6 @@
 import { getFruits } from '../apis/fruits'
+import { getDragonBallPeeps } from '../apis/Dragon-ball-super'
+
 
 export const SET_FRUITS = 'SET_FRUITS'
 
@@ -16,3 +18,24 @@ export function fetchFruits() {
     })
   }
 }
+
+//////////////////////
+
+export const SET_CHAR = 'SET_CHAR'
+
+export function setChar(char) {
+  return {
+    type: SET_CHAR,
+    payload: char,
+  }
+}
+
+export function fetchChar() {
+  return (dispatch) => {
+    return getDragonBallPeeps().then((char) => {
+      dispatch(setFruits(char))
+    })
+  }
+}
+
+

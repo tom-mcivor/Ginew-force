@@ -2,6 +2,7 @@ import React from 'react'
 import Character from './Character'
 
 function App() {
+  
   // const dispatch = useDispatch()
   // useEffect(() => {
   //   dispatch(fetchFruits())
