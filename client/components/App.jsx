@@ -23,11 +23,11 @@ function App() {
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Goku and Friends!</h1>
+        <h1 className="header-text">Ginew Force Fight Simulator</h1>
 
         <div className="parent-char">
           <div className="child-char">
-            <Character />
+            <Character index={0} />
           </div>
 
           <div className="child-char">
@@ -36,7 +36,11 @@ function App() {
             </div>
           </div>
 
-          <div className="child-char"><Character /></div>
+
+          <div className="child-char">
+            <Character index={1} />
+            </div>
+
         </div>
       </div>
     </>

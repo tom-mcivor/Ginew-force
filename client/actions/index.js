@@ -21,6 +21,7 @@ export function fetchFruits() {
 //////////////////////
 
 export const SET_CHAR = 'SET_CHAR'
+export const SELECT_CHAR = 'SELECT_CHAR'
 
 export function setChar(char) {
   return {
@@ -28,6 +29,13 @@ export function setChar(char) {
     payload: char.map((fighter) => {
       return { ...fighter, strengh: Math.floor(Math.random() * 100) }
     }),
+  }
+}
+
+export function selectChar(id, index) {
+  return {
+    type: SELECT_CHAR,
+    payload: { id, index },
   }
 }
 
