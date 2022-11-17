@@ -1,36 +1,34 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { selectChar } from '../actions'
 
 import { InputBase } from '@mantine/core'
 
-export default function Character() {
+export default function Character(props) {
   const characters = useSelector((state) => state.characters)
+  const selection = useSelector((state) => state.selection)
+  const characterId = selection[props.index]
+  const character = characters.find((found) => found.id == characterId)
+  const dispatch = useDispatch()
 
-  // let randomNum = Math.floor(Math.random() * 10)
+  function handleChange(event) {
+    const index = props.index
+    const id = event.target.value
+    dispatch(selectChar(id, index))
+  }
 
-  let [characterOne, setCharacterOne] = useState(characters[1]) //id === randomNum // {1:2} // useState(characters[1])
-
-  // characterOne = characters[randomNum]
-
-  // console.log(characters, 'test')
-
-  // console.log([characters[0][1]])
+  // let [characterOne, setCharacterOne] = useState(characters[1])
 
   // HELPPPPPPPPPPPPPPPPPPPPPPPPPPP:
-  // function randomNumber() {
-  //   return Math.floor(Math.random() * 125)
-  // }
+  // let randomNum = Math.floor(Math.random() * 10)
+  // characterOne = characters[randomNum]
 
+    
   // render drop down
   // when drop down changes
   // dispatch action to update selected character in redux
 
   // sets ID for char 1
-  function handleChange(event) {
-    const char1 = characters.find((found) => found.id == event.target.value)
-    setCharacterOne(char1)
-    console.log('char1', char1)
-  }
 
   return (
     characters && (
@@ -52,7 +50,7 @@ export default function Character() {
           ))}
         </InputBase>
 
-        <img src={characterOne.imageUrl} alt="" />
+        {character && <img src={character.imageUrl} alt="" />}
       </>
     )
   )
