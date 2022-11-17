@@ -73,7 +73,7 @@ const reducer = (state = initialState, action) => {
   switch (type) {
     // actions here
     case 'SET_CHAR':
-      return [payload]
+      return payload
     default:
       return state
   }
