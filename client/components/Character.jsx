@@ -8,7 +8,7 @@ export default function Character() {
 
   // let randomNum = Math.floor(Math.random() * 10)
 
-  let [characterOne, setCharacterOne] = useState(characters[1]) //id === randomNum // {1:2} // useState(characters[1])
+  let [characterOne, setCharacterOne] = useState(characters[Math.floor(Math.random() * 3)]) //id === randomNum // {1:2} // useState(characters[1])
 
   // characterOne = characters[randomNum]
 
