@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect }from 'react'
+
+import { fetchChar } from '../actions'
+
+import { useDispatch, useSelector } from 'react-redux'
+
 import Character from './Character'
 
 function App() {
   
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(fetchFruits())
-  // }, [])
-
+  const dispatch = useDispatch()
+  
   // dispatch action to fetch character list
+  useEffect(() => {
+    dispatch(fetchChar())
+    .catch((err) => {
+      console.error(err)
+    })
+  }, [])
+
+  
 
 
   // when fight is clicked

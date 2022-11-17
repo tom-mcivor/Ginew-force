@@ -33,7 +33,7 @@ export function setChar(char) {
 export function fetchChar() {
   return (dispatch) => {
     return getDragonBallPeeps().then((char) => {
-      dispatch(setFruits(char))
+      dispatch(setChar(char))
     })
   }
 }
