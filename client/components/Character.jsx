@@ -23,7 +23,6 @@ export default function Character(props) {
   // let randomNum = Math.floor(Math.random() * 10)
   // characterOne = characters[randomNum]
 
-    
   // render drop down
   // when drop down changes
   // dispatch action to update selected character in redux
@@ -34,14 +33,14 @@ export default function Character(props) {
     characters && (
       <>
         <InputBase
-          label="Fighter "
+          label="Select Fighter"
           component="select"
           mt="md"
           name="FighterOne"
           onChange={handleChange}
         >
-          <option value="" disabled>
-            Select your fighter
+          <option value={characterId} disabled selected>
+           {character?.name}
           </option>
           {characters.map((char, i) => (
             <option key={i} value={char?.id}>

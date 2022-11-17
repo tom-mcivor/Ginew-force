@@ -1,4 +1,7 @@
-const initialState = [-1, -1]
+const initialState = [
+  Math.floor(Math.random() * 125),
+  Math.floor(Math.random() * 125),
+]
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action
