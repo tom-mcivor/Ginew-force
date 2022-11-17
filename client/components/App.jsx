@@ -40,6 +40,8 @@ function App() {
             <Character index={1} />
             </div>
         </div>
+
+
       </div>
     </>
   )
