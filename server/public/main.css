@@ -1,4 +1,30 @@
-body{
+/* 
+*{
+
+} */
+
+.parent-char{
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  flex: 1;
 }
+
+
+.child-char{
+  flex-direction: column;
+  width: 300px;
+}
+
+.button-center {
+  margin: auto;
+  margin-top: 50%;
+  width: 50%;
+  padding: 10px;
+}
+/* 
+#app{
+  justify-content: space-between;
+}
+.div{
+  justify-content: space-between;
+} */

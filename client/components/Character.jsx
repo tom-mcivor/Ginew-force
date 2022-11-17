@@ -6,10 +6,20 @@ import { InputBase } from '@mantine/core'
 export default function Character() {
   const characters = useSelector((state) => state.characters)
 
-  const [characterOne, setCharacterOne] = useState({})
+  // let randomNum = Math.floor(Math.random() * 10)
 
-  const [characterTwo, setCharacterTwo] = useState({})
-  // console.log(characters)
+  let [characterOne, setCharacterOne] = useState(characters[1]) //id === randomNum // {1:2} // useState(characters[1])
+
+  // characterOne = characters[randomNum]
+
+  // console.log(characters, 'test')
+
+  // console.log([characters[0][1]])
+
+  // HELPPPPPPPPPPPPPPPPPPPPPPPPPPP:
+  // function randomNumber() {
+  //   return Math.floor(Math.random() * 125)
+  // }
 
   // render drop down
   // when drop down changes
@@ -25,33 +35,25 @@ export default function Character() {
   return (
     characters && (
       <>
-        <div>
-          <InputBase
-            label="Custom native select"
-            component="select"
-            mt="md"
-            name="FighterOne"
-            onChange={handleChange}
-          >
-            {characters.map((char, i) => (
-              <option key={i} value={char?.id}>
-                {char?.name}
-              </option>
-            ))}
-          </InputBase>
+        <InputBase
+          label="Fighter "
+          component="select"
+          mt="md"
+          name="FighterOne"
+          onChange={handleChange}
+        >
+          <option value="" disabled>
+            Select your fighter
+          </option>
+          {characters.map((char, i) => (
+            <option key={i} value={char?.id}>
+              {char?.name}
+            </option>
+          ))}
+        </InputBase>
 
-          <img src={characterOne.imageUrl} alt="" />
-        </div>
+        <img src={characterOne.imageUrl} alt="" />
       </>
     )
   )
 }
-
-//<p>Character</p>
-//{characters.map((char, i) => (
-// console.log('chars, i', char, i)
-// console.log('sometest', char?.imageUrl) */}
-//<div key={i}>
-//  <img src={char?.imageUrl} alt="test" />
-// </div>
-//))}
