@@ -1,34 +1,35 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Button, InputBase } from '@mantine/core'
+import { Button } from '@mantine/core'
 
 export default function Fight() {
-  const [boolean, setBoolean] = useState(false)
+  let [loading, setLoading] = useState(false)
+  const [buttonName, setButtonName] = useState(`FIGHT`)
 
   function handleClick() {
-    setBoolean(!boolean)
-    
-    // delay
-    let delayInMilliseconds = 1000; //1 second
+    // click: now needs to load: expect true
+    setLoading(true)
+    setButtonName('Fight in progess')
 
-    setTimeout(function() {
-      //your code to be executed after 1 second
-    }, delayInMilliseconds);
-    // envoke the calculate winner function test thing
-    // make boolean button false again
+    setTimeout(() => {
+      setLoading(false)
+      setButtonName('FIGHT')
+      // displayWinner()
+    }, '2000')
   }
+
 
   return (
     <div className="button-center">
       <Button
-        loading={boolean}
+        loading={loading}
         onClick={handleClick}
         variant="light"
         color="pink"
         radius="xl"
         size="xl"
       >
-        FIGHT
+        {buttonName}
       </Button>
     </div>
   )
