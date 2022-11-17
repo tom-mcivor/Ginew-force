@@ -45,7 +45,7 @@ export function fetchChar() {
     // goes to api first - dispatch in a displatch (dispatchception)
     // "This maks it 'thunky'!# "
     return getDragonBallPeeps().then((char) => {
-      console.log(char)
+      // console.log(char)
       dispatch(setChar(char))
     })
   }

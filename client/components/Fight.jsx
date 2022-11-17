@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Button } from '@mantine/core'
+// import {winnerFN} from './Winner'
 
 export default function Fight() {
   let [loading, setLoading] = useState(false)

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Character from './Character'
 import Fight from './Fight'
+import Winner from './Winner'
 
 function App() {
   const dispatch = useDispatch()
@@ -43,6 +44,7 @@ function App() {
 
         </div>
 
+        <Winner />
 
       </div>
     </>
