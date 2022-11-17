@@ -37,6 +37,7 @@
     "@emotion/react": "^11.10.5",
     "@mantine/core": "^5.8.0",
     "@mantine/hooks": "^5.8.0",
+    "@tabler/icons": "^1.112.0",
     "express": "^4.17.2",
     "knex": "^2.3.0",
     "pg": "^8.8.0",
