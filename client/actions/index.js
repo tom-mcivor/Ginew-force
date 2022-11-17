@@ -30,6 +30,7 @@ export function setChar(char) {
     }),
   }
 }
+
 // action
 export function fetchChar() {
   return (dispatch) => {
