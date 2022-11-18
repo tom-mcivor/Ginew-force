@@ -22,6 +22,7 @@ export function fetchFruits() {
 
 export const SET_CHAR = 'SET_CHAR'
 export const SELECT_CHAR = 'SELECT_CHAR'
+export const DECLARE_WINNER = 'DECLARE_WINNER'
 
 export function setChar(char) {
   return {
@@ -32,6 +33,13 @@ export function setChar(char) {
   }
 }
 
+export function declareWinner(winner) {
+  return {
+    type: DECLARE_WINNER,
+    payload: winner,
+  }
+}
+
 export function selectChar(id, index) {
   return {
     type: SELECT_CHAR,
@@ -39,7 +47,6 @@ export function selectChar(id, index) {
   }
 }
 
-// action
 export function fetchChar() {
   return (dispatch) => {
     // goes to api first - dispatch in a displatch (dispatchception)
