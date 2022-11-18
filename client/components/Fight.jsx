@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
+
 import { useSelector, useDispatch } from 'react-redux'
 import { Button } from '@mantine/core'
 // const determineWinner = require('./Winner')
 import { declareWinner } from '../actions'
 
+
 export default function Fight() {
   let [loading, setLoading] = useState(false)
   const [buttonName, setButtonName] = useState(`FIGHT`)
+
 
   const characters = useSelector((state) => state.characters)
   const selection = useSelector((state) => state.selection)
@@ -37,8 +40,6 @@ export default function Fight() {
     dispatch(declareWinner(result))
   }
 
-  // console.log(determineWinner())
-
   function handleClick() {
     // click: now needs to load: expect true
     setLoading(true)
@@ -47,11 +48,12 @@ export default function Fight() {
     setTimeout(() => {
       setLoading(false)
       setButtonName('FIGHT')
+
       determineWinner()
     }, '2000')
   }
 
-  return (
+return (
     <div className="button-center">
       <Button
         loading={loading}
