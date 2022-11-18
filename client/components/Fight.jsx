@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button } from '@mantine/core'
-// const Winner = require('./Winner')
 // const determineWinner = require('./Winner')
 import { declareWinner } from '../actions'
 
@@ -18,8 +17,8 @@ export default function Fight() {
   // console.log('character 1', character1)
   // console.log('character 2', character2)
 
-  console.log('character 1 strength', character1?.strength)
-  console.log('character 2 strength', character2?.strength)
+  // console.log('character 1 strength', character1?.strength)
+  // console.log('character 2 strength', character2?.strength)
 
   // TESTING STATION
   // console.log('TESTING STATION:', 'char1: strength', character1.strength)

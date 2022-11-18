@@ -25,6 +25,19 @@
 #app > div > h1 {
   text-align: center;
 }
+
+.winner-text {
+  text-align: center;
+  font-size: large
+}
+
+.winner-text h3 {
+  font-size: 40px;
+  color: red 
+}
+
+
+
 /* 
 #app{
   justify-content: space-between;
@@ -32,3 +45,4 @@
 .div{
   justify-content: space-between;
 } */
+
