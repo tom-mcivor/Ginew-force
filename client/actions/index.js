@@ -27,7 +27,7 @@ export function setChar(char) {
   return {
     type: SET_CHAR,
     payload: char.map((fighter) => {
-      return { ...fighter, strengh: Math.floor(Math.random() * 100) }
+      return { ...fighter, strength: Math.floor(Math.random() * 100) }
     }),
   }
 }
