@@ -4,41 +4,41 @@ import { screen, render } from '@testing-library/react'
 
 import App from './App'
 import store from '../store'
-import { fetchFruits } from '../actions'
+import { fetchChar } from '../actions'
 
 jest.mock('../actions')
 
-fetchFruits.mockImplementation(() => () => {})
+fetchChar.mockImplementation(() => () => {})
 
-test('page header includes fruit', () => {
+test('page header includes Ginew', () => {
   render(
     <Provider store={store}>
       <App />
     </Provider>
   )
-  const heading = screen.getByRole('heading')
-  expect(heading.innerHTML).toMatch(/Fruit/)
+  const heading = screen.getAllByRole('heading')
+  expect(heading[0].innerHTML).toContain('Ginew')
 })
 
-test('renders an <li> for each fruit', () => {
-  const fruits = ['orange', 'persimmons', 'kiwi fruit']
+test('we have x headings', () => {
+  const Char = ['Winner']
   jest.spyOn(store, 'getState')
-  store.getState.mockImplementation(() => ({ fruits }))
+  store.getState.mockImplementation(() => ({ Char }))
 
   render(
     <Provider store={store}>
       <App />
     </Provider>
   )
-  const li = screen.getAllByRole('listitem')
-  expect(li).toHaveLength(3)
+  const h3 = screen.getAllByRole('heading')
+  expect(h3).toHaveLength(3)
 })
 
-test('dispatches fetchFruits action', () => {
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  )
-  expect(fetchFruits).toHaveBeenCalled()
-})
+// test('dispatches fetchChar action', () => {
+//   render(
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   )
+//   expect(fetchChar).toHaveBeenCalled()
+// })
